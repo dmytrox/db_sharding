@@ -1,0 +1,39 @@
+services:
+  postgres_b:
+    image: postgres:latest
+    container_name: "postgres_b"
+    environment:
+      POSTGRES_DB: "books"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "qwerty"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./cluster/postgres_b:/scripts
+
+  postgres_b1:
+    image: postgres:latest
+    container_name: "postgres_b1"
+    environment:
+      POSTGRES_DB: "books"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "qwerty"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    ports:
+      - "5434:5432"
+    volumes:
+      - ./cluster/postgres_b1/:/scripts/
+
+  postgres_b2:
+    image: postgres:latest
+    container_name: "postgres_b2"
+    environment:
+      POSTGRES_DB: "books"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "qwerty"
+      PGDATA: "/var/lib/postgresql/data/pgdata"
+    ports:
+      - "5435:5432"
+    volumes:
+      - ./cluster/postgres_b2/:/scripts/
