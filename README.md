@@ -12,6 +12,8 @@ To login into PostgreSQL run this command:
 make t d=container_name
 ```
 
+## Performance
+
 | Sharding | Time To Process |
 | :---: | :---: |
 | True | 105 sec |
